@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0D0D0D",
+    backgroundColor: "#1A1A1A",
     padding: 24,
   },
   textInput: {
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     gap: 4,
   },
   listHeader: {
-    paddingBottom: 20,
+    paddingBottom: 12,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -43,7 +43,9 @@ export const styles = StyleSheet.create({
   noTasks: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 45,
+    paddingTop: 45,
+    borderTopColor: "#333333",
+    borderTopWidth: 1,
   },
   noTasksTitle: {
     color: "#808080",

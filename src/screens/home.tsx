@@ -20,6 +20,7 @@ export function Home() {
   };
   const [tasks, setTasks] = useState<Task[]>([]);
   const [taskName, setTaskContent] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   function handleAddTask() {
     if (taskName === "") {
@@ -63,11 +64,16 @@ export function Home() {
       <Logo />
       <View style={styles.form}>
         <TextInput
-          style={styles.textInput}
+          style={[
+            styles.textInput,
+            isFocused && { borderColor: "#5E60CE", borderWidth: 1 },
+          ]}
           placeholder="Adicione uma nova tarefa"
           placeholderTextColor="#808080"
           onChangeText={setTaskContent}
           value={taskName}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
         />
         <TouchableOpacity onPress={handleAddTask} style={styles.button}>
           <Text style={styles.buttonText}>+</Text>
